@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jamero, James N. CV Resume</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+  <link rel="stylesheet" type="text/css" href="./CSS/Resume.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+
+    <div class="left_Side">
+      <div class="profileText">
+        <div class="imgBx">
+          <img src="Images/jameros.jpg" alt="James Jamero">
+        </div>
+        <h2>Jamero James N.<br><span>Full Stack Developer</span></h2>
+      </div>
+
+      <div class="contactInfo">
+        <h3 class="title">Contact Info</h3>
+        <ul>
+          <li><span class="icon"><i class="fa fa-phone"></i></span><span class="text">0910 582 7021</span></li>
+          <li><span class="icon"><i class="fa fa-envelope"></i></span><span class="text">jamerojames425@gmail.com</span></li>
+          <li><span class="icon"><i class="fa fa-globe"></i></span><span class="text">github.com/JameroJames-TakahashiHoshino</span></li>
+          <li><span class="icon"><i class="fab fa-linkedin"></i></span><span class="text">www.linkedin.com/james-jamero-3b0716342/</span></li>
+          <li><span class="icon"><i class="fa fa-map-marker"></i></span><span class="text">292 Magsaysay street, Barangay Pasong Tamo, Quezon City, Philippines</span></li>
+        </ul>
+      </div>
+
+      <div class="contactInfo education">
+        <h3 class="title">EDUCATION</h3>
+        <ul>
+          <li>
+            <h5>2015 - 2019</h5>
+            <h4>Culiat High School</h4>
+            <h4>High School Name</h4>
+          </li>
+          <li>
+            <h5>2019 - 2021</h5>
+            <h4>Polytechnic University of the Philippines</h4>
+            <h4>Senior High School Name</h4>
+          </li>
+          <li>
+            <h5>2021 - 2026</h5>
+            <h4>New Era University</h4>
+            <h4>University Name</h4>
+          </li>
+        </ul>
+      </div>
+
+      <div class="contactInfo language">
+        <h3 class="title">LANGUAGES</h3>
+        <ul>
+          <li>
+            <span class="text">English</span>
+            <div class="lang-bar"><div style="width:100%"></div></div>
+          </li>
+          <li>
+            <span class="text">Filipino</span>
+            <div class="lang-bar"><div style="width:100%"></div></div>
+          </li>
+        </ul>
+      </div>
+    </div> <!-- end left_Side -->
+
+    <div class="right_Side">
+      <div class="about">
+        <h2 class="title2">Profile</h2>
+        <p>
+          I am an Information Technology student with strong fundamentals in cybersecurity, backend engineering, and API development.
+          I focus on building secure, scalable, and efficient systems while applying principles such as authentication, authorization, secure storage, and vulnerability prevention.
+          My experience includes developing RESTful APIs, implementing backend logic, managing databases, and deploying applications using cloud and version control tools.
+          I continuously study topics like network security, secure coding practices, and system hardening to strengthen my foundation in cybersecurity and backend development.
+        </p>
+      </div>
+
+      <div class="about">
+        <h2 class="title2">Experience</h2>
+
+        <div class="box">
+          <div class="year_company">
+            <h5>2023 - Present</h5>
+            <h5>Personal & Academic Projects</h5>
+          </div>
+          <div class="text">
+            <h4>Student Developer</h4>
+            <p>Developed various backend and full-stack applications focusing on API development, secure authentication, and database-driven systems.
+              Worked with Node.js, Express, Laravel, MongoDB, and MySQL to build functional and secure application workflows.
+              Strengthened understanding of system architecture and cybersecurity fundamentals through hands-on projects.</p>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="year_company">
+            <h5>2024 - Present</h5>
+            <h5>Independent Learning</h5>
+          </div>
+          <div class="text">
+            <h4>Self-Learning Programmer</h4>
+            <p>Learning and practicing backend security, API design, cloud deployment, and DevOps basics.
+              Engaged in continuous learning of cybersecurity concepts such as OWASP Top 10, secure coding, and network fundamentals.
+              Applying new knowledge through personal projects and structured online learning paths.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="about skills">
+        <h2 class="title2">Professional Skills</h2>
+        
+        <div class="box">
+          <h4>Backend Development (Node.js, Express, Laravel)</h4>
+          <div class="percent"><div style="width:92%"></div></div>
+        </div>
+       
+        <div class="box">
+          <h4>Database Management (MongoDB, MySQL, Query Optimization)</h4>
+          <div class="percent"><div style="width:88%"></div></div>
+        </div>
+
+        <div class="box">
+          <h4>Deployment & DevOps Basics (Git, CI/CD, Cloud Deployment)</h4>
+          <div class="percent"><div style="width:80%"></div></div>
+        </div>
+
+        <div class="box">
+          <h4>JavaScript, PHP & Python</h4>
+          <div class="percent"><div style="width:95%"></div></div>
+        </div>
+      </div>
+
+      <!-- Moved interest and button INSIDE right_Side and fixed class name -->
+      <div class="about interest">
+        <h2 class="title2">Interest</h2>
+        <ul>
+          <li><i class="fas fa-chart-bar"></i>Trading</li>
+          <li><i class="fas fa-laptop"></i>Developing</li>
+          <li><i class="fas fa-gamepad"></i>Gaming</li>
+          <li><i class="fas fa-briefcase"></i>Business</li>
+        </ul>
+      </div>
+
+      <div class="button">
+        <button id="download-resume"><i class="fas fa-download"></i> Download Resume</button>
+      </div>
+
+    </div> <!-- end right_Side -->
+
+  </div> <!-- end container -->
+
+  <div class="rain-overlay"></div>
+  <script src="./Javascript/Resume.js"></script>
+</body>
+</html>

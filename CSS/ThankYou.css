@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background: radial-gradient(circle at center, #000 50%, #001a0f);
+    color: #00ff9f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Share Tech Mono', monospace;
+    overflow: hidden;
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 255, 0, 0.03) 0px,
+        rgba(0, 255, 0, 0.03) 2px,
+        transparent 2px,
+        transparent 4px
+    );
+    animation: scan 4s linear infinite;
+}
+
+.container {
+    text-align: center;
+    z-index: 2;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.logo {
+    width: 130px;
+    opacity: 0.85;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 20px #00ff9f);
+}
+
+.thank-you {
+    font-size: 3.5rem;
+    letter-spacing: 2px;
+    color: #00ff9f;
+    text-shadow: 0 0 10px #00ff9f, 0 0 20px #00ff9f;
+    animation: glitch 2s infinite;
+}
+
+.message {
+    font-size: 1.2rem;
+    color: #00ff9f;
+    margin-top: 15px;
+    opacity: 0.8;
+}
+
+.rain {
+    position: absolute;
+    top: 0;
+    font-size: 1rem;
+    color: rgba(0, 255, 0, 0.3);
+    text-shadow: 0 0 8px rgba(0, 255, 0, 0.8);
+    animation: fall linear;
+}
+.back-button {
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 255, 159, 0.1);
+    border: 1px solid rgba(0, 255, 159, 0.4);
+    color: #00ff9f;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-family: 'Share Tech Mono', monospace;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 0 10px rgba(0,255,159,0.5);
+    z-index: 10;
+}
+
+.back-button:hover {
+    background: rgba(0, 255, 159, 0.25);
+    box-shadow: 0 0 20px rgba(0,255,159,0.8);
+    transform: translateX(-50%) scale(1.05);
+}
+
+
+@keyframes fall {
+    from { transform: translateY(-10vh); opacity: 1; }
+    to { transform: translateY(100vh); opacity: 0; }
+}
+
+@keyframes scan {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes glitch {
+    0% { text-shadow: 2px 2px #0f0, -2px -2px #000; }
+    25% { text-shadow: -2px 2px #0f0, 2px -2px #000; }
+    50% { text-shadow: 2px -2px #0f0, -2px 2px #000; }
+    75% { text-shadow: -2px -2px #0f0, 2px 2px #000; }
+    100% { text-shadow: 2px 2px #0f0, -2px -2px #000; }
+}

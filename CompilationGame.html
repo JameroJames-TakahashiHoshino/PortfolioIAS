@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compilation of Games</title>
+  <link rel="stylesheet" href="./CSS/CompilationGames.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+</head>
+<body>
+
+  <!-- Back Button -->
+  <div class="back-button">
+    <a href="index.html"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+  </div>
+
+  <!-- Background Animation -->
+  <div class="gaming-bg"></div>
+
+  <!-- Main Section -->
+  <section class="compilation">
+    <h1 class="title">🎮 Compilation of My Games 🎮</h1>
+    
+    <div class="links-box">
+      <div class="link-item">
+        <img src="Images/Aswang.JPG" alt="Example 1">
+        <div class="info">
+          <h2>Example Game 1 (Most Complex Game So Far)</h2>
+          <span class="language java">Java</span>
+          <a href="Aswang-video.html" target="_blank">Check it</a>
+        </div>
+      </div>
+
+      <div class="link-item">
+        <img src="/Images/snakes.JPG" alt="Example 2">
+        <div class="info">
+          <h2>Example Game 2 (Simple Game)</h2>
+          <span class="language python">Python</span>
+          <a href="SnakesLadders.html" target="_blank">Check it</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    
+    const cards = document.querySelectorAll('.link-item');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    cards.forEach(card => observer.observe(card));
+  </script>
+  
+</body>
+</html>

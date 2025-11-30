@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Backend Compilation Showcase</title>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="/CSS/CompilationBackendAPI.css">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+</head>
+<body>
+
+  <div class="back-button">
+    <a href="index.html"><i class="fas fa-arrow-left"></i> Back</a>
+  </div>
+
+  <div class="tech-bg"></div>
+
+  <section class="showcase">
+    <h1 class="title">⚙️ Backend Compilation Showcase</h1>
+
+    <div class="backend-card fade-in">
+
+      <!-- Terminal Header -->
+      <div class="terminal-header">
+        <span class="red"></span>
+        <span class="yellow"></span>
+        <span class="green"></span>
+      </div>
+
+      <!-- Terminal Output -->
+      <div class="terminal-output">
+$ npm install
+Installing dependencies...
+✔ express
+✔ mongoose
+✔ dotenv
+✔ cors
+✔ jsonwebtoken
+
+$ npm run build
+Compiling backend modules...
+✔ API routes optimized
+✔ Controllers linked
+✔ Database connection stable
+✔ Authentication middleware ready
+
+Server compiled successfully.
+Listening on port 5000...
+      </div>
+      <!-- Info Section -->
+     <div class="backend-info">
+      <h2>Book API</h2>
+          <p>
+            A RESTful Book API that supports full CRUD for books, authors and categories.
+            Features include search & filter (title, author, genre), pagination, input validation,
+            rate limiting and role-based access for admin operations.
+            Ideal for powering catalog pages, reading lists, or library apps.
+          </p>
+
+        <a href="https://book-api-jamero.vercel.app/" target="_blank" class="backend-button">
+          <i class="fas fa-book"></i> View Book API
+        </a>
+      </div>
+
+      <div class="backend-info">
+        <h2>Fitness Tracker API</h2>
+          <p>
+            Backend for a fitness app — handles user auth (JWT), workout logging, activity
+            metrics, and daily summary endpoints. Includes endpoints for creating workouts,
+            tracking sets/reps, storing heart-rate/steps, and retrieving analytics for dashboards.
+            Built for low-latency reads so frontends and mobile apps get fast feedback.
+         </p>
+
+        <a href="https://fitness-tracker-api-jamero.vercel.app/" target="_blank" class="backend-button">
+          <i class="fas fa-heartbeat"></i> View Fitness API
+        </a>
+      </div>
+
+      <div class="backend-info">
+        <h2>Expense Tracker — Full Website</h2>
+          <p>
+            The complete Expense Tracker web app (frontend + backend). Features user authentication,
+            transaction CRUD, categorization, monthly reports, interactive charts, CSV export/import,
+            and responsive UI. Built as a MERN-style stack with production-ready session & security measures.
+            Perfect for personal finance and budgeting flows.
+          </p>
+
+        <a href="expense-tracker.html" target="_blank" class="backend-button">
+             <i class="fas fa-wallet"></i> View Expense Tracker
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const appearOptions = { threshold: 0.2 };
+
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    fadeEls.forEach(el => appearOnScroll.observe(el));
+  </script>
+
+</body>
+</html>

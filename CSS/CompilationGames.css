@@ -1,0 +1,210 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #050505;
+  color: #fff;
+  overflow-x: hidden;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Animated Background */
+.gaming-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(120deg, #0f0c29, #302b63, #24243e);
+  background-size: 400% 400%;
+  animation: moveGradient 15s ease infinite;
+  z-index: -2;
+}
+
+@keyframes moveGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Glowing Grid Overlay */
+.gaming-bg::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 300%;
+  height: 300%;
+  background-image: 
+    linear-gradient(transparent 96%, rgba(0,255,255,0.12) 4%),
+    linear-gradient(90deg, transparent 96%, rgba(0,255,255,0.12) 4%);
+  background-size: 80px 80px;
+  animation: moveGrid 20s linear infinite;
+  opacity: 0.2;
+}
+
+@keyframes moveGrid {
+  from { transform: translateY(0); }
+  to { transform: translateY(-80px); }
+}
+
+/* Back Button */
+.back-button {
+  position: fixed;
+  top: 25px;
+  left: 25px;
+  z-index: 10;
+}
+
+.back-button a {
+  text-decoration: none;
+  color: #fff;
+  background: rgba(255, 0, 100, 0.25);
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  border: 1px solid rgba(255, 0, 100, 0.4);
+  transition: 0.3s;
+  backdrop-filter: blur(6px);
+}
+
+.back-button a:hover {
+  background: rgba(255, 0, 100, 0.5);
+  box-shadow: 0 0 20px rgba(255, 0, 100, 0.7);
+}
+
+/* Main Section */
+.compilation {
+  max-width: 1200px;
+  margin: 120px auto;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+/* Title */
+.title {
+  font-size: 48px;
+  font-weight: 800;
+  color: #ff007f;
+  text-shadow: 0 0 30px rgba(255, 0, 150, 0.8);
+  margin-bottom: 60px;
+  animation: glowTitle 3s ease-in-out infinite;
+}
+
+@keyframes glowTitle {
+  0%, 100% { text-shadow: 0 0 30px rgba(255, 0, 150, 0.8); }
+  50% { text-shadow: 0 0 50px rgba(255, 0, 150, 1); }
+}
+
+/* Links Container */
+.links-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+/* Each Game Card */
+.link-item {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 0, 150, 0.4);
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(255, 0, 150, 0.2);
+  overflow: hidden;
+  width: 480px;
+  transform: translateY(50px);
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+/* Fade-in animation */
+.link-item.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Game Image */
+.link-item img {
+  width: 100%;
+  height: 270px;
+  object-fit: cover;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Info Section */
+.info {
+  padding: 25px;
+}
+
+.info h2 {
+  font-size: 24px;
+  color: #00eaff;
+  margin-bottom: 15px;
+  text-shadow: 0 0 15px rgba(0, 234, 255, 0.6);
+}
+
+.info a {
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(90deg, #ff007f, #ff00ff, #00ffff);
+  background-size: 200% 200%;
+  padding: 10px 25px;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  animation: buttonGlow 3s infinite linear;
+}
+
+@keyframes buttonGlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.info a:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 20px rgba(255, 0, 255, 0.7);
+}
+
+/* Language Tags */
+.language {
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.9em;
+  font-weight: 600;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Unique colors per language */
+.language.java {
+  background: linear-gradient(90deg, #ff4b1f, #ff9068);
+  box-shadow: 0 0 10px rgba(255, 75, 31, 0.4);
+}
+
+.language.python {
+  background: linear-gradient(90deg, #f7df1e, #ffd54f);
+  color: #333;
+  box-shadow: 0 0 10px rgba(255, 255, 0, 0.4);
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .link-item {
+    width: 90%;
+  }
+  .title {
+    font-size: 34px;
+  }
+}

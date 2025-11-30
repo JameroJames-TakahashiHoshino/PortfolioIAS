@@ -1,0 +1,228 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    background-color: #0a0a0a;
+    overflow-x: hidden;
+}
+
+/* Back button */
+.back-button {
+    position: fixed;
+    top: 25px;
+    left: 25px;
+    z-index: 10;
+}
+
+.back-button a {
+    text-decoration: none;
+    color: #fff;
+    background: rgba(255, 0, 0, 0.1);
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 0, 0, 0.2);
+    backdrop-filter: blur(6px);
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+.back-button a:hover {
+    background: rgba(255, 0, 0, 0.2);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+}
+
+/* Layout */
+.main-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 100px;
+    margin: 120px 50px 50px 50px;
+}
+
+/* Compilation container */
+.compilation {
+    max-width: 800px;
+    width: 100%;
+}
+
+/* Title */
+.title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #ff1f1f;
+    margin-bottom: 50px;
+    text-align: left;
+}
+
+/* Links box */
+.links-box {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+/* Each app container */
+.link-item {
+    background: #1a1a1a;
+    border: 1px solid #ff1f1f;
+    border-radius: 15px;
+    padding: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 200%; /* <— increase this value to make them wider */
+    max-width: 750px; /* optional: limits how wide they can grow */
+}
+
+.link-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 25px #ff1f1f;
+}
+
+/* Image */
+.link-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* App link */
+.link-item a {
+    font-size: 22px;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.link-item a:hover {
+    color: #ff1f1f;
+}
+
+/* Description */
+.link-item p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #ccc;
+    line-height: 1.5;
+}
+
+/* ===== Red Line with Horizontal Text ===== */
+.vertical-text-container {
+    position: relative;
+}
+
+/* Red vertical line (full height) */
+.separator-line {
+    position: fixed;
+    top: 0;
+    right: 500px; /* Adjust as needed */
+    width: 3px;
+    height: 100vh;
+    background-color: #ff1f1f;
+    display: flex;
+    justify-content: center; /* Center text horizontally within line */
+    align-items: center;     /* Center text vertically within line */
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    overflow: visible;
+}
+
+/* Text inside the red line */
+.line-text {
+    color: #fff;
+    background-color: #0a0a0a; /* Slight background to make text readable */
+    padding: 5px 10px; /* Breathing space inside the line */
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    border-radius: 4px;
+    transform: rotate(90deg); /* Keep text horizontal */
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+    .main-layout {
+        flex-direction: column-reverse;
+        gap: 50px;
+        margin: 100px 20px 50px 20px;
+    }
+
+    .compilation {
+        max-width: 100%;
+    }
+
+    /* Line and text for smaller screens */
+    .separator-line {
+        position: static;
+        width: 80%;
+        height: 2px;
+        margin: 20px auto;
+        writing-mode: horizontal-tb;
+    }
+
+    .line-text {
+        transform: none;
+        text-align: center;
+        font-size: 18px;
+        padding: 5px 10px;
+    }
+}
+.reference-text {
+    position: fixed;
+    top: 30px;
+    right: 40px;
+    color: #ff1f1f;
+    font-size: 18px;
+    font-weight: 600;
+    text-shadow: 0 0 10px #ff1f1f;
+    letter-spacing: 1px;
+    z-index: 100;
+    pointer-events: none; /* ensures it doesn't block clicks on other elements */
+}
+/* Side reference text (right side of the separator line) */
+.side-reference {
+    position: fixed;
+    top: 120px;
+    right: 50px;
+    width: 350px;
+    color: #ccc;
+    font-size: 16px;
+    line-height: 1.6;
+    z-index: 50;
+    text-align: justify;
+}
+
+.side-reference h2 {
+    color: #1fff84;
+    font-size: 22px;
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px #1950e7;
+}
+.reference-link {
+    margin-top: 15px;
+}
+
+.reference-link a {
+    color: #0adf5b;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: 0 0 8px #0c81cf;
+    transition: 0.3s ease;
+}
+
+.reference-link a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 12px #ffffff;
+}
+
+

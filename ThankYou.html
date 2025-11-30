@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - Access Logged</title>
+    <link rel="stylesheet" href="./CSS/ThankYou.css">
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="container">
+        <img src="Images/Hackerman.jpg" alt="Hacker Logo" class="logo">
+        <h1 class="thank-you">THANK YOU</h1>
+        <p class="message">Your data has been successfully encrypted... I mean, submitted ✅</p>
+    </div>
+
+
+    <script>
+        // Binary rain effect
+        const body = document.body;
+        const createRain = () => {
+            const span = document.createElement("span");
+            span.textContent = Math.random() > 0.5 ? "0" : "1";
+            span.classList.add("rain");
+            span.style.left = Math.random() * 100 + "vw";
+            span.style.animationDuration = Math.random() * 2 + 2 + "s";
+            body.appendChild(span);
+            setTimeout(() => span.remove(), 4000);
+        };
+        setInterval(createRain, 100);
+
+        // Glitch animation text effect
+        const text = document.querySelector(".thank-you");
+        const chars = "!<>-_\\/[]{}—=+*^?#________";
+        const original = text.textContent;
+        let frame = 0;
+
+        const glitch = () => {
+            frame++;
+            text.textContent = original.split("").map((ch, i) =>
+                i < frame / 2 ? ch : chars[Math.floor(Math.random() * chars.length)]
+            ).join("");
+            if (frame < original.length * 2) requestAnimationFrame(glitch);
+        };
+        glitch();
+    </script>
+
+    <!-- Back Button -->
+    <a href="index.html" class="back-button">⬅ Back to Portfolio</a>
+</body>
+</html>

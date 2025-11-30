@@ -1,0 +1,206 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #0a0f1f;
+  color: #fff;
+  overflow-x: hidden;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* BACKGROUND ANIMATION */
+.tech-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, #0f2027, #203a43, #2c5364);
+  z-index: -2;
+  overflow: hidden;
+}
+
+/* Add glowing grid lines */
+.tech-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300%;
+  height: 300%;
+  background-image: 
+    linear-gradient(transparent 97%, rgba(0,255,255,0.15) 3%),
+    linear-gradient(90deg, transparent 97%, rgba(0,255,255,0.15) 3%);
+  background-size: 80px 80px;
+  animation: moveGrid 15s linear infinite;
+  opacity: 0.25;
+}
+
+@keyframes moveGrid {
+  from { transform: translateY(0) translateX(0); }
+  to { transform: translateY(-80px) translateX(-80px); }
+}
+
+/* Moving color gradient overlay */
+.tech-bg::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(120deg, #00d2ff, #3a7bd5, #4facfe, #00f2fe);
+  background-size: 400% 400%;
+  animation: gradientShift 20s ease infinite;
+  mix-blend-mode: overlay;
+  opacity: 0.15;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Back Button */
+.back-button {
+  position: fixed;
+  top: 25px;
+  left: 25px;
+  z-index: 10;
+}
+
+.back-button a {
+  text-decoration: none;
+  color: #fff;
+  background: rgba(0, 255, 255, 0.2);
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(0, 255, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
+.back-button a:hover {
+  background: rgba(0, 255, 255, 0.4);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+/* Showcase Section */
+.showcase {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 120px 20px 100px;
+  z-index: 5;
+}
+
+/* Title */
+.title {
+  font-size: 45px;
+  font-weight: 800;
+  color: #00eaff;
+  margin-bottom: 50px;
+  text-shadow: 0 0 20px rgba(0,255,255,0.6);
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% { text-shadow: 0 0 20px rgba(0,255,255,0.5); }
+  50% { text-shadow: 0 0 40px rgba(0,255,255,1); }
+}
+
+/* App Card */
+.app-card {
+  background: rgba(255, 255, 255, 0.07);
+  border: 2px solid rgba(0, 255, 255, 0.2);
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 255, 255, 0.2);
+  max-width: 1100px;
+  width: 90%;
+  overflow: hidden;
+  transform: translateY(50px);
+  opacity: 0;
+  transition: transform 1s ease, opacity 1s ease;
+}
+
+/* Visible animation */
+.app-card.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.app-card img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: contain; /* ensures full image visible */
+  display: block;
+  margin: 0 auto;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  background: #0a0f1f; /* background behind image */
+}
+
+
+
+/* App Info */
+.app-info {
+  padding: 40px;
+  text-align: left;
+}
+
+.app-info h2 {
+  font-size: 36px;
+  color: #00eaff;
+  margin-bottom: 20px;
+  text-shadow: 0 0 15px rgba(0,255,255,0.5);
+}
+
+.app-info p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #e0f7fa;
+  margin-bottom: 30px;
+}
+
+/* Button */
+.app-button {
+  display: inline-block;
+  text-decoration: none;
+  background: #00eaff;
+  color: #0a0f1f;
+  padding: 14px 32px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+.app-button:hover {
+  background: #fff;
+  transform: scale(1.07);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.6);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .app-info {
+    padding: 25px;
+  }
+  .app-info h2 {
+    font-size: 28px;
+  }
+  .app-info p {
+    font-size: 16px;
+  }
+}

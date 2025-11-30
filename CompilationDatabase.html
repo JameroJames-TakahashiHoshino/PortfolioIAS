@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compilation of Database</title>
+  <link rel="stylesheet" href="./CSS/CompilationDatabase.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+</head>
+<body>
+
+  <div class="back-button">
+    <a href="index.html"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+  </div>
+
+  <!-- Background canvas -->
+  <canvas id="dataCanvas"></canvas>
+
+  <section class="compilation">
+    <div class="title">💾 Compilation of Database I created</div>
+
+    <!-- Access input -->
+    <div class="access-container">
+      <input type="text" id="sqlAccess" placeholder="Type a simple SQL query to access..." />
+      <button id="accessBtn">Access</button>
+    </div>
+
+    <div class="links-box" id="linksBox">
+      <div class="link-item">
+        <img src="Images/mongodbJPG.JPG" alt="Database Example 1">
+        <a href="https://cloud.mongodb.com/v2/68fdddeb3d54a64bf88f7621#/clusters/detail/Cluster0" target="_blank">Database Link 1_MONGO DB SERVERLESS</a>
+      </div>
+
+      <div class="link-item">
+        <img src="Images/IBM.JPG" alt="Database Example 2">
+        <a href="https://cloud.ibm.com/databases-overview/overview" target="_blank">Database Link 2_IBM CLOUD PLATFORM SERVER</a>
+      </div>
+
+       <div class="link-item">
+        <img src="Images/Heidi.JPG" alt="Database Example 1">
+        <a href="https://www.heidisql.com/" target="_blank">Database Link 3_Heidi Database management tool.</a>
+      </div>
+
+    </div>
+  </section>
+
+ <script>
+  // Data flowing effect
+  const canvas = document.getElementById('dataCanvas');
+  const ctx = canvas.getContext('2d');
+
+  let width = canvas.width = window.innerWidth;
+  let height = canvas.height = window.innerHeight;
+
+  const dataFields = [
+    'SELECT * FROM users;', 'Name', 'Age', 'Email', 'Salary', 'City', 
+    'Department', 'JOIN', 'WHERE', 'ORDER BY', 'ID', 'INSERT INTO', 'UPDATE'
+  ];
+
+  const fontSize = 24; 
+  const columns = Math.floor(width / (fontSize * 1.5));
+  const drops = Array(columns).fill(0);
+
+  function draw() {
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+    ctx.fillRect(0, 0, width, height);
+
+    ctx.fillStyle = '#00bfff';
+    ctx.font = `${fontSize}px monospace`;
+
+    for (let i = 0; i < drops.length; i++) {
+      const text = dataFields[Math.floor(Math.random() * dataFields.length)];
+      ctx.fillText(text, i * fontSize * 1.5, drops[i] * fontSize);
+
+      if (drops[i] * fontSize > height || Math.random() > 0.975) {
+        drops[i] = 0;
+      }
+      drops[i] += 0.25;
+    }
+
+    requestAnimationFrame(draw);
+  }
+
+  draw();
+
+  window.addEventListener('resize', () => {
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
+  });
+
+  // SQL access
+  const accessBtn = document.getElementById('accessBtn');
+  const sqlInput = document.getElementById('sqlAccess');
+  const linksBox = document.getElementById('linksBox');
+  const accessContainer = document.querySelector('.access-container');
+
+  linksBox.style.display = 'none'; // hide by default
+
+  accessBtn.addEventListener('click', () => {
+    const query = sqlInput.value.trim().toLowerCase();
+    if(query.includes('select')) {
+      // Hide access container
+      accessContainer.style.display = 'none';
+      // Show compilation container
+      linksBox.style.display = 'flex';
+    } else {
+      alert('Access denied. Try typing a SELECT query!');
+    }
+  });
+</script>
+</body>
+</html>

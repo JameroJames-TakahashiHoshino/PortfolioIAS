@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scroll Background Animation</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 300vh; /* Height for scrolling */
+      overflow-x: hidden;
+      font-family: Arial, sans-serif;
+    }
+
+    .section {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-size: cover;
+      background-position: center;
+      opacity: 0; /* Hidden by default */
+      transition: opacity 0.8s ease-in-out;
+    }
+
+    .section.one {
+      background-image: url('https://wallpaperaccess.com/full/2834116.jpg');
+    }
+
+    .section.two {
+      background-image: url('https://wallpapers.com/images/hd/parallax-background-5v7eoqdrp5v0v3y8.jpg');
+    }
+
+    .section.three {
+      background-image: url('https://cdn1.epicgames.com/ue/product/Screenshot/Cyperpunk-1920x1080-3d91f91b1b32cbe6b745f92ef6c582e4.png');
+    }
+
+    .content {
+      position: absolute;
+      bottom: 10%;
+      width: 100%;
+      text-align: center;
+      color: white;
+    }
+
+    .content h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .content p {
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="section one"></div>
+  <div class="section two"></div>
+  <div class="section three"></div>
+
+  <div class="content">
+    <h1>Scroll to See the Animation</h1>
+    <p>Watch the backgrounds change as you scroll</p>
+  </div>
+
+  <script>
+    const sections = document.querySelectorAll('.section');
+
+    function updateSections() {
+      const scrollPosition = window.scrollY;
+      const viewportHeight = window.innerHeight;
+
+      sections.forEach((section, index) => {
+        const sectionStart = index * viewportHeight;
+        const sectionEnd = (index + 1) * viewportHeight;
+
+        if (scrollPosition >= sectionStart && scrollPosition < sectionEnd) {
+          section.style.opacity = 1;
+        } else {
+          section.style.opacity = 0;
+        }
+      });
+    }
+
+    window.addEventListener('scroll', updateSections);
+
+    // 🔥 Important: Show the initial background immediately on page load
+    window.dispatchEvent(new Event('scroll'));
+  </script>
+</body>
+</html>

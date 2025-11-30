@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App Showcase</title>
+  <link rel="stylesheet" href="./CSS/CompilationApps.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+</head>
+<body>
+
+  <div class="back-button">
+    <a href="index.html"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+  </div>
+
+  <div class="tech-bg"></div> <!-- animated techy background -->
+
+  <section class="showcase">
+    <h1 class="title">🚀 My App Showcase 🚀</h1>
+
+    <div class="app-card fade-in">
+      <img src="Images/APPsample.jpg" alt="App Screenshot">
+
+      <div class="app-info">
+        <h2>My Awesome App</h2>
+        <p>
+          A full-stack mobile and web app that blends performance, design, and user experience.  
+          Developed with modern frameworks and APIs, this project represents the fusion of creativity and technology.  
+          Explore how I bring innovation to life through code and design.
+        </p>
+        <a href="MovieApp-video.html" target="_blank" class="app-button">
+          <i class="fas fa-external-link-alt"></i> View App
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // fade-in on scroll
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const appearOptions = { threshold: 0.2 };
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+    fadeEls.forEach(el => appearOnScroll.observe(el));
+  </script>
+
+</body>
+</html>

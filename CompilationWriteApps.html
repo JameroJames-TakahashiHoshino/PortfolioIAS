@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compilation of WriteApps</title>
+    <link rel="stylesheet" href="./CSS/CompilationWriteApps.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+</head>
+<body>
+
+    <div class="back-button">
+        <a href="index.html"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+    </div>
+    <p class="reference-text">This is my reference text.</p>
+
+
+    <div class="main-layout">
+        <!-- WriteApps Compilation -->
+        <section class="compilation">
+            <div class="title">📝 Compilation of My WriteApps 📝</div>
+
+            <div class="links-box">
+            <div class="link-item">
+                <img src="/Images/Cybersecurity-Fundamentals.png" alt="Cyber Security WriteApp">
+                <p class="app-title">Cyber Security Fundamentals — Step-by-Step Guide</p>
+                <p>
+                    Description: This write-app walks you through core cyber security concepts and hands-on steps to improve the security of a personal project or small website.
+                    <br><br>
+                    1. **Understand core concepts** — Learn confidentiality, integrity, availability (CIA triad), authentication vs authorization, and threat modeling. Take 1–2 pages to define each with real examples (e.g., password theft = confidentiality breach).
+                    <br><br>
+                    2. **Create a threat model** — Identify assets (user data, admin panels), potential attackers (script kiddies, insiders), attack vectors (phishing, SQL injection), and likely impact. Sketch a simple diagram and rank threats by likelihood and impact.
+                    <br><br>
+                    3. **Secure authentication** — Explain best practices: use strong password policies, password hashing (bcrypt/argon2) with a brief example, multi-factor authentication, and session management (secure cookies, HttpOnly, SameSite).
+                    <br><br>
+                    4. **Protect data in transit and at rest** — How to enable HTTPS (obtain free TLS cert from Let’s Encrypt), enforce HSTS, and use encryption for databases and backups. Include commands / config snippets for certbot and sample TLS headers.
+                    <br><br>
+                    5. **Input validation & secure coding** — Show step-by-step examples: sanitize user input, prepared statements to prevent SQL injection, escaping output to avoid XSS, and OWASP Top 10 overview with remediation tips.
+                    <br><br>
+                    6. **Network & infrastructure hardening** — Guide to firewall basics, limiting exposed ports, using SSH keys instead of passwords, and keeping services updated. Add a checklist for server setup.
+                    <br><br>
+                    7. **Monitoring and incident response** — Set up simple logging (file + log rotation), basic intrusion detection (fail2ban), and a short incident response plan: identify, contain, eradicate, recover, and post-mortem.
+                    <br><br>
+                    8. **Backup and recovery** — Explain backup frequency, offsite storage, verifying restores, and a hands-on example: create cron job for nightly DB dump and rotate last 7 days.
+                    <br><br>
+                    9. **Continuous improvement** — Suggest regular vulnerability scans, using free scanners (e.g., automated tools), dependency audits, and a simple checklist for monthly review.
+                    <br><br>
+                    10. **Further reading & exercises** — Provide practice tasks: set up MFA for a sample app, fix a deliberately vulnerable endpoint, and write a one-page threat model for a class project.
+                </p>
+                </div>
+
+                <div class="link-item">
+                <img src="/Images/Deploy.png" alt="Website Deployment WriteApp">
+                <p class="app-title">Deploying a Website — Step-by-Step Deployment Guide</p>
+                <p>
+                    Description: This write-app gives a complete, sequential guide to deploy a static or simple dynamic website from local machine to live domain, including DNS, SSL, and simple CI/CD.
+                    <br><br>
+                    1. **Prepare your project for deployment** — Organize folders, create a `.env.example`, add a production build script, and ensure `.gitignore` excludes secrets. Explain difference between static vs dynamic deployment.
+                    <br><br>
+                    2. **Choose a hosting option** — Compare GitHub Pages / Netlify / Vercel for static sites and DigitalOcean / Render / Heroku for dynamic apps. Short pros/cons table and which to pick for student projects.
+                    <br><br>
+                    3. **Initialize version control & repository** — Stepwise `git init`, create README, commit, and push to GitHub. Add clear branch strategy (main for production).
+                    <br><br>
+                    4. **Link repo to deploy platform** — Example for Vercel/Netlify: authorize account, choose repo, set build command and output folder, and add environment variables securely.
+                    <br><br>
+                    5. **Domain & DNS setup** — Buy or use a free domain. Explain A, CNAME, and TXT records. Walkthrough: point domain to host with exact record values and how to check propagation (nslookup/dig).
+                    <br><br>
+                    6. **Enable HTTPS** — Show how to enable automatic TLS (Let’s Encrypt) via host dashboard or via certbot on a VPS. Include steps to force HTTPS and add HSTS header for better security.
+                    <br><br>
+                    7. **CI/CD basics** — Add a simple GitHub Actions workflow for automated build and deploy on push to main. Provide a minimal YAML snippet and explain steps.
+                    <br><br>
+                    8. **Environment & secrets management** — Use platform environment variable settings to store API keys and DB strings. Never commit secrets — demonstrate using `.env` only locally and platform vaults for production.
+                    <br><br>
+                    9. **Testing & smoke checks** — Create a pre-deployment checklist: run unit tests, lint, open deployed URL and verify assets, console errors, and form submissions. Provide sample test commands.
+                    <br><br>
+                    10. **Rollback & monitoring** — How to roll back to previous release, enable basic uptime monitoring (free tools), and set up simple logs/alerts. End with an exercise: deploy a small static blog and update content via Git.
+                </p>
+                </div>
+
+                <div class="link-item">
+                <img src="/Images/VirusProtect.jpg" alt="Virus Detection WriteApp">
+                <p class="app-title">Detecting Malicious Files — Step-by-Step Explanation</p>
+                <p>
+                    Description: This write-app explains how antivirus detection works in plain language and teaches stepwise methods to analyze suspicious files safely (for learning only).
+                    <br><br>
+                    1. **Safety first** — Always analyze suspicious files in an isolated VM or sandbox. Document how to create a snapshot and revert after testing. Never analyze on your main machine.
+                    <br><br>
+                    2. **Static analysis basics** — Explain signature-based detection: how hashes (MD5/SHA) and known signatures are used. Show how to compute a hash and query VirusTotal (describe manual use without automating keys).
+                    <br><br>
+                    3. **File metadata & strings** — Walk through extracting metadata (file type, headers) and using `strings` on binaries to find suspicious URLs, IPs, or commands. Give example commands and interpretation tips.
+                    <br><br>
+                    4. **Behavioral indicators** — Describe indicators of compromise: unexpected network connections, new autorun entries, persistence mechanisms, and unusual process creation. How to monitor these in a sandbox using Process Explorer and Sysinternals tools.
+                    <br><br>
+                    5. **Dynamic analysis** — Stepwise approach to run a sample in a controlled environment with network isolation, capture network traffic (Wireshark), and log filesystem/registry changes. Explain how to record and summarize findings.
+                    <br><br>
+                    6. **Heuristics and ML detection** — Explain heuristic detection and how modern antivirus uses behavior patterns and machine learning rather than exact signatures. Provide simple examples of heuristic rules (suspicious obfuscation, packing).
+                    <br><br>
+                    7. **Writing simple YARA rules** — Introduce YARA and walk through creating a basic rule to match a suspicious string or binary pattern. Provide a minimal example and show how to test it on sample files.
+                    <br><br>
+                    8. **Automated scanning & triage** — Describe building a triage flow: initial AV scan, reputation lookups, static/dynamic checks, and classification (benign, suspicious, malicious). Suggest tools for automation (sandbox APIs) but emphasize safe usage.
+                    <br><br>
+                    9. **Remediation & reporting** — If a file is confirmed malicious in a test environment, explain containment steps (delete, isolate, restore from backup), and how to document the incident for future learning or reporting.
+                    <br><br>
+                    10. **Practice lab & ethics** — Finish with lab exercises: analyze a benign, obfuscated sample and write a short report summarizing techniques used and why conclusions were reached. Add a short ethics note: only analyze samples you are allowed to and never distribute malware.
+                </p>
+                </div>
+
+
+            </div>
+        </section>
+
+                <!-- Vertical Text Section -->
+                <!-- Vertical Line with Inside Text -->
+                <div class="vertical-text-container">
+                     <div class="separator-line"></div>
+                     <div class="side-reference">
+    <h2>Reference Notes</h2>
+    <p>
+        This section contains additional notes and explanations related to my WriteApps.
+        Everything written here serves as a guide or reference to understand the lessons I followed
+        while creating these documents.
+    </p>
+    <p>
+        These WriteApps include step-by-step explanations on Cyber Security fundamentals,
+        Website Deployment processes, and basic Virus Detection techniques. 
+        All content is summarized from research, hands-on practice, and classroom activities.
+    </p>
+    <p>
+        The purpose of this side reference area is to give context about the topics included on this page, 
+        explain my thought process, and provide supporting information for learning and review.
+    </p>
+
+    <!-- ✅ Reference link here -->
+   <div class="reference-link">
+    <a href="https://www.geeksforgeeks.org/ethical-hacking/cyber-security-tutorial/" target="_blank">
+        Cybersecurity & Ethical Hacking Fundamentals →
+    </a>
+</div>
+
+<div class="reference-link">
+    <a href="https://www.techtarget.com/searchenterprisedesktop/tutorial/Rootkit-and-malware-detection-and-removal-guide" target="_blank">
+        Malware Detection & Removal (TechTarget) →
+    </a>
+</div>
+
+<div class="reference-link">
+    <a href="https://www.hostragons.com/en/blog/web-security-basics-protect-your-site/" target="_blank">
+        Web Security Basics — Protect Your Site →
+    </a>
+</div>
+
+<div class="reference-link">
+    <a href="https://www.cloudways.com/blog/website-security/" target="_blank">
+        Website Security Guide (Cloudways) →
+    </a>
+</div>
+
+<div class="reference-link">
+    <a href="https://www.hostingbyalitech.com/blog/post/how-protect-your-website-malware-and-viruses" target="_blank">
+        Protect Your Website from Malware & Viruses →
+    </a>
+</div>
+<div class="reference-link">
+    <a href="https://arxiv.org/abs/1811.00926" target="_blank">
+        Detecting Malicious Third-Party Scripts (Excision Research) →
+    </a>
+</div>
+
+
+</div>
+        </div>
+
+    </div>
+
+</body>
+</html>
