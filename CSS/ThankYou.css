@@ -36,6 +36,7 @@ body {
     text-align: center;
     z-index: 2;
     animation: fadeIn 2s ease-in-out;
+    padding: 0 20px;
 }
 
 .logo {
@@ -68,6 +69,7 @@ body {
     text-shadow: 0 0 8px rgba(0, 255, 0, 0.8);
     animation: fall linear;
 }
+
 .back-button {
     position: fixed;
     bottom: 40px;
@@ -94,6 +96,33 @@ body {
     transform: translateX(-50%) scale(1.05);
 }
 
+/* ------------------ RESPONSIVE FIXES ------------------ */
+@media (max-width: 600px) {
+    body {
+        padding: 20px;
+        overflow: hidden;
+    }
+
+    .logo {
+        width: 90px;
+        margin-bottom: 15px;
+    }
+
+    .thank-you {
+        font-size: 2.2rem;
+        line-height: 1.2;
+    }
+
+    .message {
+        font-size: 1rem;
+    }
+
+    .back-button {
+        bottom: 20px;
+        padding: 10px 22px;
+        font-size: 0.9rem;
+    }
+}
 
 @keyframes fall {
     from { transform: translateY(-10vh); opacity: 1; }

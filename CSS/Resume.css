@@ -339,5 +339,82 @@ background: rgb(148, 8, 8);
     grid-auto-rows: auto;
 }
 
+/* ------------------------- */
+/*  RESPONSIVE FOR PHONES   */
+/* ------------------------- */
+@media (max-width: 900px) {
+    .container {
+        grid-template-columns: 1fr; /* Stack left + right */
+        margin: 20px;
+    }
+
+    .container .left_Side {
+        padding: 25px;
+    }
+
+    .container .right_Side {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 600px) {
+    .profileText .imgBx {
+        width: 120px;
+        height: 120px;
+    }
+
+    .profileText h2 {
+        font-size: 1.2em;
+    }
+
+    .skills .box {
+        grid-template-columns: 1fr; /* Break skill layout */
+        gap: 5px;
+    }
+
+    .about .box {
+        flex-direction: column;
+    }
+
+    .about .box .year_company {
+        min-width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .interest ul {
+        grid-template-columns: repeat(2, 1fr); /* 4 → 2 columns */
+    }
+
+    .button {
+        width: 100%;
+    }
+
+    .button button {
+        width: 100%;
+        text-align: center;
+    }
+
+    .back-btn {
+        top: 10px;
+        right: 10px;
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 400px) {
+    .container {
+        margin: 10px;
+    }
+
+    .profileText .imgBx {
+        width: 100px;
+        height: 100px;
+    }
+
+    .interest ul {
+        grid-template-columns: 1fr; /* Stack */
+    }
+}
 
   

@@ -225,4 +225,28 @@ body {
     text-shadow: 0 0 12px #ffffff;
 }
 
+/* Fix responsiveness ONLY on mobile */
+@media (max-width: 600px) {
+    .link-item {
+        width: 100% !important;  /* stops overflow */
+        max-width: 100% !important;
+    }
+
+    .main-layout {
+        margin: 120px 20px 50px 20px;
+        gap: 40px;
+        flex-direction: column;
+    }
+
+    .side-reference {
+        position: static;
+        width: 100%;
+        margin-top: 20px;
+        text-align: left;
+    }
+
+    .separator-line {
+        display: none; /* vertical line breaks mobile layout */
+    }
+}
 

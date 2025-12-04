@@ -244,3 +244,88 @@ body {
   opacity: 0.8;
   text-shadow: 0 0 8px #00ff9f;
 }
+
+/* 📱 FULL RESPONSIVE FIX */
+@media (max-width: 1024px) {
+  .compilation {
+    width: 95%;
+    padding: 60px 30px;
+  }
+
+  .title {
+    font-size: 2.8rem;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+  }
+
+  .link-item {
+    flex-direction: column;   /* stack image + text */
+    text-align: center;
+    min-height: auto;
+    padding: 25px;
+  }
+
+  .link-item img {
+    width: 100%;
+    height: auto;
+    max-width: 350px;
+    margin: 0 0 25px 0;       /* spacing below image */
+  }
+
+  .link-text {
+    text-align: center;
+  }
+
+  .link-text a {
+    font-size: 24px;
+  }
+
+  .link-text p {
+    font-size: 1rem;
+  }
+}
+
+
+/* 📱📱 SMALL PHONES */
+@media (max-width: 600px) {
+
+  .compilation {
+    width: 95%;
+    padding: 40px 20px;
+  }
+
+  .title {
+    font-size: 2.2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    margin-bottom: 40px;
+  }
+
+  .link-item {
+    padding: 20px;
+  }
+
+  .link-item img {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .link-text a {
+    font-size: 20px;
+  }
+
+  .link-text p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+
+  .back-button a {
+    padding: 8px 14px;
+    font-size: 14px;
+  }
+}
+
